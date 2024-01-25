@@ -1,4 +1,5 @@
 import React from 'react';
+import GIF1 from '../../assets/GIF1.gif';
 import IMG1 from '../../assets/alc.png';
 import IMG2 from '../../assets/todo.png';
 import IMG3 from '../../assets/shelter.png';
@@ -12,8 +13,8 @@ const Portfolio = () => {
   const soloProjects = [
     {
       id: 1,
-      title: 'Adventist Learning Center',
-      img: IMG1,
+      title: 'Adventistggg Learning Center',
+      img: GIF1,
       description:
         'Adventist Learning Center provides quality education to Syrian and Kurdish Refugees living in Beirut, Lebanon. This simple website was built to reach a bigger audience and ease the process of gathering donations for the ALC students.',
       technologies: 'Ruby on Rails | SCSS',

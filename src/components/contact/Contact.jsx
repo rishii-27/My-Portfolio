@@ -1,31 +1,22 @@
-import React, { useRef, useState } from 'react';
-import emailjs from '@emailjs/browser';
-import { MdOutlineEmail } from 'react-icons/md';
-import './contact.css';
+import React, { useRef, useState } from "react";
+import { MdOutlineEmail } from "react-icons/md";
+import { useForm, ValidationError } from "@formspree/react";
+import "./contact.css";
 
 const Contact = () => {
-  const [message, setMessage] = useState(false);
+  const [state, handleSubmit] = useForm("mvoezqnq");
   const formRef = useRef();
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setMessage(true);
-    emailjs
-      .sendForm(
-        'service_k2qawqh',
-        'template_c6rkpn6',
-        formRef.current,
-        'X7K7ebhIeOy3YwHki'
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+  const [message, setMessage] = useState(""); // Added state for message
+  const handleFormSubmit = async (event) => {
+    await handleSubmit(event);
 
-    e.target.reset();
+    // Check if the form submission is successful
+    if (state.succeeded) {
+      // Clear the input fields
+      formRef.current.reset();
+      // Update the message state
+      setMessage("Thanks, I'll reply ASAP");
+    }
   };
   return (
     <section id="contact">
@@ -36,33 +27,60 @@ const Contact = () => {
           <article className="contact__option">
             <MdOutlineEmail className="contact__option-icon" />
             <h4>Email</h4>
-            <h5>merigogichashvili13@gmail.com</h5>
-            <a href="mailto:merigogichashvili13@gmail.com">Send a message</a>
+            <h5>joshihrishikesh4100@gmail.com</h5>
+            <a href="mailto:joshihrishikesh4100@gmail.com">Send a message</a>
           </article>
         </div>
-        <form ref={formRef} onSubmit={handleSubmit}>
+        <form ref={formRef} onSubmit={handleFormSubmit}>
           <input
+            id="user_name"
             type="text"
             placeholder="Your Full Name"
             name="user_name"
             required
           />
           <input
-            type="text"
+            id="user_contact"
+            type="tel" // Use "tel" type for telephone input
+            placeholder="Your Contact Number (10 digits)"
+            name="user_contact"
+            pattern="[0-9]{10}" // Pattern for 10 digits
+            required
+          />
+          <ValidationError
+            prefix="Contact"
+            field="user_contact"
+            errors={state.errors}
+          />
+          <input
+            id="user_email"
+            type="email"
             placeholder="Your Email"
             name="user_email"
             required
           />
+          <ValidationError prefix="Email" field="email" errors={state.errors} />
           <textarea
+            id="user_message"
             placeholder="Your message"
             rows="7"
-            name="message"
+            name="user_message"
             required
           ></textarea>
-          <button type="submit" className="btn btn-primary">
+          <ValidationError
+            prefix="Message"
+            field="user_message" // Update field name to match the textarea name
+            errors={state.errors}
+          />
+
+          <button
+            type="submit"
+            className="btn btn-primary"
+            disabled={state.submitting}
+          >
             Send Message
           </button>
-          {message && <span>Thanks, I'll reply ASAP :)</span>}
+          {message && <span>{message}</span>}
         </form>
       </div>
     </section>
