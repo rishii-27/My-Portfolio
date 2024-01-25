@@ -1,68 +1,21 @@
-.experience__container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+.tech-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px; /* Adjust spacing between images */
 }
 
-.experience__container > div {
-    background: var(--color-bg-variant);
-    padding: 2.4rem 5rem;
-    border-radius: 2rem;
-    border: 1px solid transparent;
-    transition: var(--transition);
+.tech-logo {
+  width: 90px; /* Adjust the size as needed */
+  height: 90px;
+  border-radius: 50%;
+  object-fit: contain; /* Ensures the entire image is visible inside the circle */
+  object-position: center; /* Centers the image within the circle */
+  overflow: hidden; /* Hides any content outside the circle */
+  transition: transform 0.2s ease-in-out;
+  padding: 5px; /* Add padding to create space inside the circle */
 }
 
-.experience__container > div:hover {
-    background: transparent;
-    border-color: var(--color-primary-variant);
-    cursor: default;
-}
-
-.experience__container > div h3 {
-    text-align: center;
-    margin-bottom: 2rem;
-    color: var(--color-primary);
-}
-
-.experience__content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    row-gap: 2rem;
-}
-
-.experience__details {
-    display: flex;
-    gap: 1rem;
-}
-
-.experience__details-icon {
-    margin-top: 6px;
-    color: var(--color-primary);
-}
-
-@media screen and (max-width: 1024px){
-    .experience__container {
-        grid-template-columns: 1fr;
-    }
-
-    .experience__container > div {
-        width: 80%;
-        margin: 0 auto;
-        padding: 2rem;
-    }
-
-    .experience__content p {
-        padding: 1rem;
-    }
-}
-  
-@media screen and (max-width: 600px){
-    .experience__container {
-        gap: 1rem;
-    }
-
-    .experience__container > div {
-        width: 100%;
-        padding: 2rem 1rem;
-    }
+.tech-logo:hover {
+  transform: scale(1.2); /* Adjust the scale factor for hover effect */
 }
