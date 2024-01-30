@@ -2,12 +2,6 @@ import React from "react";
 import GIF1 from "../../assets/GIF1.gif";
 import GIF2 from "../../assets/GIF2.gif";
 import GIF3 from "../../assets/GIF3.gif";
-// import IMG1 from '../../assets/alc.png';
-// import IMG2 from "../../assets/todo.png";
-// import IMG3 from "../../assets/shelter.png";
-// import IMG4 from "../../assets/fake.png";
-// import IMG5 from "../../assets/news.png";
-// import IMG6 from "../../assets/math.png";
 
 import "./portfolio.css";
 
@@ -39,44 +33,13 @@ const Portfolio = () => {
       title: "MailBox Client",
       img: GIF1,
       description:
-        "A robust email application developed with React. Users can sign up, log in, and seamlessly send and receive emails. This app utilizes Firebase for user authentication, email storage, and Redux for state management. A visually appealing badge status indicates whether inbox messages are read or unread with visual indicators",
+        "A robust email application developed with React. Users can sign up, log in, and seamlessly send and receive emails. This app utilizes Firebase for user authentication, email storage, and Redux for state management. A visually appealing badge status indicates whether inbox messages are read or unread with visual indicators.",
       technologies: "Tech Stack: React | Firebase | Redux",
 
       credentials: "Login Credentials: test@test.com | 123456",
       link: "https://mailboxx-client.netlify.app/",
       github: "https://github.com/rishii-27/mailbox-client",
     },
-
-    // {
-    //   id: 4,
-    //   title: "Shelter",
-    //   img: IMG3,
-    //   description:
-    //     "Fully responsive interactive website built based on Figma design",
-    //   technologies: "JavaScript | CSS",
-    //   link: "https://meri-mg.github.io/shelter/pages/main/index.html",
-    //   github: "https://github.com/Meri-MG/shelter",
-    // },
-    // {
-    //   id: 5,
-    //   title: 'World News',
-    //   img: IMG5,
-    //   description:
-    //     'Fully responsive interactive website built based on Adobe XD design',
-    //   technologies: 'JavaScript | CSS',
-    //   link: 'https://meri-mg.github.io/Unilab-world-news/',
-    //   github: 'https://github.com/Meri-MG/Unilab-world-news',
-    // },
-    // {
-    //   id: 6,
-    //   title: 'Math Resource',
-    //   img: IMG6,
-    //   description:
-    //     'Real-world group project which is still in progress and will provide educational platform for future young developers',
-    //   technologies: 'JavaScript | Scss | Python',
-    //   link: 'https://lukinoo.github.io/math-resource/',
-    //   github: 'https://github.com/lukinoo/math-resource',
-    // },
   ];
 
   return (
