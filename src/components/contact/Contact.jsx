@@ -7,17 +7,17 @@ const Contact = () => {
   const [state, handleSubmit] = useForm("mvoezqnq");
   const formRef = useRef();
   const [message, setMessage] = useState(""); // Added state for message
+
   const handleFormSubmit = async (event) => {
+    event.preventDefault();
     await handleSubmit(event);
 
-    // Check if the form submission is successful
-    if (state.succeeded) {
-      // Clear the input fields
-      formRef.current.reset();
-      // Update the message state
-      setMessage("Thanks, I'll reply ASAP");
-    }
+    // Clear the input fields
+    formRef.current.reset();
+    // Update the message state
+    setMessage("Thanks, I'll reply ASAP!");
   };
+
   return (
     <section id="contact">
       <h5>Get In Touch</h5>

@@ -1,6 +1,6 @@
 import React from 'react';
 import GIF1 from '../../assets/GIF1.gif';
-import IMG1 from '../../assets/alc.png';
+// import IMG1 from '../../assets/alc.png';
 import IMG2 from '../../assets/todo.png';
 import IMG3 from '../../assets/shelter.png';
 import IMG4 from '../../assets/fake.png';
