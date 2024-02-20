@@ -6,6 +6,7 @@ import Header from "./components/header/Header";
 import Intro from "./components/intro/Intro";
 import Portfolio from "./components/portfolio/Portfolio";
 import Topbar from "./components/topbar/Topbar";
+import TawkMessenger from "./components/chat/TawkMessenger";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
       <Portfolio />
       <Contact />
       <Footer />
+      <TawkMessenger />
     </>
   );
 };
